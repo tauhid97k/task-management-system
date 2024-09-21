@@ -1,7 +1,15 @@
-import { Outlet } from 'react-router-dom'
 import Navbar from '@/components/Navbar'
+import { Outlet } from 'react-router-dom'
 import { Suspense } from 'react'
-import Loading from '@/components/Loading'
+import { LoaderCircle } from 'lucide-react'
+
+const Loading = () => {
+  return (
+    <div className="min-h-[calc(100vh-84px)] grid place-items-center">
+      <LoaderCircle className="size-12  stroke-1 animate-spin" />
+    </div>
+  )
+}
 
 const AuthLayout = () => {
   return (
