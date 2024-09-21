@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Requests\Api\Auth;
+namespace App\Http\Requests\Api\Task;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
-class RegisterRequest extends FormRequest
+class UpdateTaskRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,13 +23,12 @@ class RegisterRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required', 'string'],
-            'email' => ['required', 'email', 'string', 'unique:users,email'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'title' => ['required', 'string'],
+            'description' => ['nullable', 'string'],
             'status' => [
                 'required',
                 'string',
-                Rule::in(['active', 'inactive', 'suspended']),
+                Rule::in(['pending', 'inprogress', 'completed']),
             ]
         ];
     }
