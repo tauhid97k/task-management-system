@@ -3,8 +3,75 @@
 @tailwind utilities;
 
 body {
-  font-family: 'Quicksand', system-ui;
+  font-family: 'Inter', sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+}
+
+/* Icons */
+.icon {
+  @apply size-5;
+}
+.dropdown-icon {
+  @apply size-[18px];
+}
+
+/* Buttons */
+.btn {
+  @apply h-10 px-3.5 flex items-center justify-center gap-x-1 text-center font-medium rounded-md text-lg border border-transparent text-white disabled:opacity-70 disabled:pointer-events-none transition-colors;
+}
+.btn-primary {
+  @apply bg-blue-600 hover:bg-blue-700;
+}
+.btn-secondary {
+  @apply text-zinc-700 bg-zinc-200 hover:bg-zinc-300;
+}
+.btn-danger {
+  @apply bg-red-600 hover:bg-red-700;
+}
+.btn-muted {
+  @apply text-zinc-700 bg-zinc-200 hover:bg-zinc-300/50;
+}
+.btn-icon {
+  @apply size-10 flex items-center justify-center rounded-md text-zinc-600 hover:bg-zinc-100;
+}
+
+/* Card */
+.card {
+  @apply p-5 rounded-lg bg-white shadow-sm;
+}
+.card-contrast {
+  @apply rounded-md bg-white border border-zinc-200;
+}
+.card-header {
+  @apply h-14 flex items-center capitalize px-6 font-medium whitespace-nowrap tracking-wide text-lg text-zinc-700 bg-zinc-200/50 border-b border-zinc-200;
+}
+
+/* Form */
+.input-container {
+  @apply flex flex-col gap-y-1 mb-3 col-span-2 lg:col-span-1;
+}
+.input-label {
+  @apply font-medium tracking-wide;
+}
+.input {
+  @apply w-full rounded-md focus:ring-0 border-zinc-200 bg-transparent;
+}
+.input-contrast {
+  @apply w-full rounded-md focus:ring-0 border-zinc-200 bg-white;
+}
+/* Autofill selection color on dark */
+.dark .input,
+.dark .input-contrast {
+  color-scheme: dark;
+}
+.input-checkbox {
+  @apply size-[18px] focus:ring-0 focus:ring-offset-0 border-zinc-200 rounded text-blue-600 focus:ring-blue-500;
+}
+.input-checkbox-contrast {
+  @apply size-[18px] focus:ring-0 focus:ring-offset-0 border-zinc-200 rounded text-blue-600 focus:ring-blue-500;
+}
+.input-error {
+  @apply text-red-400 text-[15px];
 }
